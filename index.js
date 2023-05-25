@@ -1,6 +1,7 @@
 const {conexion} = require("./basedatos/conexion");
 const express = require('express');
 const cors = require("cors")
+const morgan = require('morgan');
 const routes = require('./routes/index.js');
 
 //Inicializar app
@@ -18,6 +19,8 @@ app.use(cors());
 
 //Convertir body a objeto js
 app.use(express.json());
+app.use(express.urlencoded({extended:true})) // por si me llegar los datos por el formato normal
+app.use(morgan('dev'));
 
 //Crear rutas
 app.use('/', routes);
