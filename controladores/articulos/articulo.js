@@ -1,4 +1,4 @@
-const Articulo = require("../modelos/Articulo")
+const Articulo = require("../../modelos/Articulo")
 
 const postArticulo = (titulo, contenido) => {
 
